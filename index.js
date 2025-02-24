@@ -230,7 +230,7 @@ function purchase11(){
         }
     }else{
         if(autoclicker == 0){
-            document.getElementById("Text").textContent = "You must have " + new Intl.NumberFormat("en-US").format(price11) + " Points to purchase this upgrade."
+            document.getElementById("Text").textContent = "You must have " + new Intl.NumberFormat("en-US").format(price11) + " points to purchase this upgrade."
         }else{
             document.getElementById("Text").textContent = "This upgrade has reached it's highest level."
         }
