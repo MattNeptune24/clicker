@@ -89,7 +89,7 @@ function purchase3(){
         clicks = clicks-price3
         multiplier = multiplier + new Intl.NumberFormat("en-US").format(multiplier3)
         multiplier3 = multiplier3 + 10
-        document.getElementById("Shop3").textContent = "+" + multiplier3
+        document.getElementById("Shop3").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier4)
         document.getElementById("Text2").textContent = new Intl.NumberFormat("en-US").format(multiplier) + " Clicks / Click"
         price3 = price3 * 2
     }else{
