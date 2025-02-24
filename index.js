@@ -24,6 +24,11 @@ var multiplier7 = 5000
 var price8 = 5000000
 var multiplier8 = 10000
 
+var price9 = 10000000
+var multiplier9 = 50000
+var price10 = 50000000
+var multiplier10 = 100000
+
 document.getElementById("Button").onclick = click
 document.getElementById("Shop1").onclick = purchase1
 document.getElementById("Shop2").onclick = purchase2
@@ -33,6 +38,8 @@ document.getElementById("Shop5").onclick = purchase5
 document.getElementById("Shop6").onclick = purchase6
 document.getElementById("Shop7").onclick = purchase7
 document.getElementById("Shop8").onclick = purchase8
+document.getElementById("Shop9").onclick = purchase9
+document.getElementById("Shop10").onclick = purchase10
 
 function purchase1(){
     if(clicks>=(price1-1)){
@@ -143,6 +150,34 @@ function purchase8(){
         price8 = price8 * 2
     }else{
         document.getElementById("Text").textContent = "You must have " + price8 + " clicks to purchase this upgrade."
+    }
+}
+
+function purchase9(){
+    if(clicks>=(price9-1)){
+        clicksDisplay.textContent = clicks-price9
+        clicks = clicks-price9
+        multiplier = multiplier + multiplier9
+        multiplier9 = multiplier9 + 1000
+        document.getElementById("Shop3").textContent = "+" + multiplier9
+        document.getElementById("Text2").textContent = multiplier + " Clicks / Click"
+        price9 = price9 * 2
+    }else{
+        document.getElementById("Text").textContent = "You must have " + price9 + " clicks to purchase this upgrade."
+    }
+}
+
+function purchase10(){
+    if(clicks>=(price10-1)){
+        clicksDisplay.textContent = clicks-price10
+        clicks = clicks-price10
+        multiplier = multiplier + multiplier10
+        multiplier10 = multiplier10 + 2000
+        document.getElementById("Shop4").textContent = "+" + multiplier10
+        document.getElementById("Text2").textContent = multiplier + " Clicks / Click"
+        price10 = price10 * 2
+    }else{
+        document.getElementById("Text").textContent = "You must have " + price10 + " clicks to purchase this upgrade."
     }
 }
 
