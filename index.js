@@ -87,7 +87,7 @@ function purchase3(){
     if(clicks>=(price3-1)){
         clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks-price3)
         clicks = clicks-price3
-        multiplier = multiplier + new Intl.NumberFormat("en-US").format(multiplier3)
+        multiplier = multiplier + multiplier3
         multiplier3 = multiplier3 + 10
         document.getElementById("Shop3").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier3)
         document.getElementById("Text2").textContent = new Intl.NumberFormat("en-US").format(multiplier) + " Clicks / Click"
@@ -129,7 +129,7 @@ function purchase6(){
     if(clicks>=(price6-1)){
         clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks-price6)
         clicks = clicks-price6
-        multiplier = multiplier + new Intl.NumberFormat("en-US").format(multiplier6)
+        multiplier = multiplier + multiplier6
         multiplier6 = multiplier6 + 200
         document.getElementById("Shop6").textContent = "+" + multiplier6
         document.getElementById("Text2").textContent = new Intl.NumberFormat("en-US").format(multiplier) + " Clicks / Click"
