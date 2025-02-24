@@ -30,7 +30,11 @@ label{
 
 .text3{
     font-size: 14px;
-    color: rgb(255, 150, 150);
+    color: rgb(255, 175, 175);
+}
+
+.auto{
+    color: rgb(175, 255, 175);
 }
 
 .clicks{
