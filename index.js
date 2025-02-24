@@ -103,7 +103,7 @@ function purchase5(){
         clicks = clicks-price5
         multiplier = multiplier + multiplier5
         multiplier5 = multiplier5 + 100
-        document.getElementById("Shop1").textContent = "+" + multiplier5
+        document.getElementById("Shop5").textContent = "+" + multiplier5
         document.getElementById("Text2").textContent = multiplier + " Clicks / Click"
         price5 = price5 * 2
     }else{
@@ -117,7 +117,7 @@ function purchase6(){
         clicks = clicks-price6
         multiplier = multiplier + multiplier6
         multiplier6 = multiplier6 + 200
-        document.getElementById("Shop2").textContent = "+" + multiplier6
+        document.getElementById("Shop6").textContent = "+" + multiplier6
         document.getElementById("Text2").textContent = multiplier + " Clicks / Click"
         price6 = price6 * 2
     }else{
@@ -131,7 +131,7 @@ function purchase7(){
         clicks = clicks-price7
         multiplier = multiplier + multiplier7
         multiplier7 = multiplier7 + 1000
-        document.getElementById("Shop3").textContent = "+" + multiplier7
+        document.getElementById("Shop7").textContent = "+" + multiplier7
         document.getElementById("Text2").textContent = multiplier + " Clicks / Click"
         price7 = price7 * 2
     }else{
@@ -145,7 +145,7 @@ function purchase8(){
         clicks = clicks-price8
         multiplier = multiplier + multiplier8
         multiplier8 = multiplier8 + 2000
-        document.getElementById("Shop4").textContent = "+" + multiplier8
+        document.getElementById("Shop8").textContent = "+" + multiplier8
         document.getElementById("Text2").textContent = multiplier + " Clicks / Click"
         price8 = price8 * 2
     }else{
@@ -159,7 +159,7 @@ function purchase9(){
         clicks = clicks-price9
         multiplier = multiplier + multiplier9
         multiplier9 = multiplier9 + 1000
-        document.getElementById("Shop3").textContent = "+" + multiplier9
+        document.getElementById("Shop9").textContent = "+" + multiplier9
         document.getElementById("Text2").textContent = multiplier + " Clicks / Click"
         price9 = price9 * 2
     }else{
@@ -173,7 +173,7 @@ function purchase10(){
         clicks = clicks-price10
         multiplier = multiplier + multiplier10
         multiplier10 = multiplier10 + 2000
-        document.getElementById("Shop4").textContent = "+" + multiplier10
+        document.getElementById("Shop10").textContent = "+" + multiplier10
         document.getElementById("Text2").textContent = multiplier + " Clicks / Click"
         price10 = price10 * 2
     }else{
