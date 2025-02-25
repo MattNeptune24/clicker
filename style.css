@@ -37,9 +37,15 @@ label{
     color: rgb(175, 255, 175);
 }
 
+.auto2{
+    color: rgb(255, 175, 175);
+}
+
+.restart{
+    color: rgb(255, 175, 175);
+}
+
 .clicks{
     font-size: 100px;
-    right: 10px;
-    top: 20px;
-    width: 500px;
+    width: 10px;
 }
