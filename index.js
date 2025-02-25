@@ -1,6 +1,7 @@
 const clicksDisplay = document.getElementById("Clicks")
 const totalDisplay = document.getElementById("Total")
 
+var totalMultiplier = 1
 var multiplier = 1
 var clicks = -1
 var autoclicker = 0
