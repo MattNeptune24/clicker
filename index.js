@@ -5,7 +5,7 @@ var totalMultiplier = 1
 var multiplier = 1
 var clicks = -1
 var autoclicker = 0
-var price11 = 50000
+var price11 = 100000
 var restartPrice = 1000000
 
 var price1 = 10
