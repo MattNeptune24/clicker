@@ -59,7 +59,7 @@ document.getElementById("Shop10").textContent = "+" + new Intl.NumberFormat("en-
 const autoclicker1 = (autoclicker) => {
     setTimeout(() => {
     clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
-    clicks = clicks + multiplier
+    clicks = clicks + (multiplier * totalMultiplier)
     if(autoclicker >= 1){
         autoclicker1(autoclicker)
     }
@@ -68,16 +68,9 @@ const autoclicker1 = (autoclicker) => {
 
 autoclicker1(autoclicker)
 
-function autoclicker0(){
-    console.log(autoclicker)
-    if(autoclicker >= 1){
-        click()
-    }
-}
-
 function click(){
     clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
-    clicks = clicks + multiplier
+    clicks = clicks + (multiplier * totalMultiplier)
 }
 
 function purchase1(){
