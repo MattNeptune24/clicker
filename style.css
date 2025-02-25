@@ -1,15 +1,16 @@
 *{
-    background-color: rgb(50,50 ,50 );
     color: rgb(200, 200, 200);
     text-align: center;
 }
 
 body{
+    background-image: radial-gradient(rgb(70,70,85), rgb(50,50,50));
     font-family: Arial, Helvetica, sans-serif;
     line-height: 20px;
 }
 
 button{
+    background-image: radial-gradient(rgb(70,70,85), rgb(50,50,50));
     height: 50px;
     width: 150px;
     font-size: larger;
@@ -31,17 +32,16 @@ label{
 .text3{
     font-size: 14px;
     color: rgb(255, 175, 175);
+    background-image: radial-gradient(rgb(85,70,70), rgb(50,50,50));
 }
 
 .auto{
+    background-image: radial-gradient(rgb(70,85,70), rgb(50,50,50));
     color: rgb(175, 255, 175);
 }
 
-.auto2{
-    color: rgb(255, 175, 175);
-}
-
 .restart{
+    background-image: radial-gradient(rgb(85,70,70), rgb(50,50,50));
     color: rgb(255, 175, 175);
 }
 
