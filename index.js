@@ -6,6 +6,7 @@ var multiplier = 1
 var clicks = -1
 var autoclicker = 0
 var price11 = 50000
+var restartPrice = 1000000
 
 var price1 = 10
 var multiplier1 = 1
@@ -34,6 +35,8 @@ var multiplier10 = 100000
 
 document.getElementById("Button").onclick = click
 document.getElementById("Autoclicker").onclick = purchase11
+document.getElementById("RestartButton").onclick = restart
+
 document.getElementById("Shop1").onclick = purchase1
 document.getElementById("Shop2").onclick = purchase2
 document.getElementById("Shop3").onclick = purchase3
@@ -67,6 +70,43 @@ const autoclicker1 = (autoclicker) => {
 }
 
 autoclicker1(autoclicker)
+
+function restart(){
+    if(clicks >= restartPrice){
+        multiplier = 1
+        clicks = -1, autoclicker = 0
+        price11 = 50000, totalMultiplier = totalMultiplier + 0.5
+
+        price1 = 10, multiplier1 = 1
+        price2 = 500, multiplier2 = 10
+
+        price3 = 10000, multiplier3 = 50
+        price4 = 50000, multiplier4 = 100
+
+        price5 = 250000, multiplier5 = 500
+        price6 = 1000000, multiplier6 = 1000
+
+        price7 = 5000000, multiplier7 = 5000
+        price8 = 20000000, multiplier8 = 10000
+
+        price9 = 100000000, multiplier9 = 50000
+        price10 = 500000000, multiplier10 = 100000
+        
+        document.getElementById("Shop1").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier1), document.getElementById("Shop2").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier2)
+        document.getElementById("Shop3").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier3), document.getElementById("Shop4").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier4)
+        document.getElementById("Shop5").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier5), document.getElementById("Shop6").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier6)
+        document.getElementById("Shop7").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier7), document.getElementById("Shop8").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier8)
+        document.getElementById("Shop9").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier9), document.getElementById("Shop10").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier10)
+
+
+        clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
+        document.getElementById("Text2").textContent = new Intl.NumberFormat("en-US").format(multiplier) + " Point / Click"
+        document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
+        restartPrice = restartPrice * 10
+    }else{
+        document.getElementById("Text").textContent = "You must have " + new Intl.NumberFormat("en-US").format(restartPrice) + " points to restart your progress."
+    }
+}
 
 function click(){
     clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
