@@ -49,3 +49,7 @@ label{
     font-size: 100px;
     width: 10px;
 }
+
+.hardmode {
+    background-image: radial-gradient(rgb(85,70,70), rgb(50,50,50));
+}
