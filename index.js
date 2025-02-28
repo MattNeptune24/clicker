@@ -1,37 +1,37 @@
 const clicksDisplay = document.getElementById("Clicks")
 const totalDisplay = document.getElementById("Total")
 
-var totalMultiplier = 1
-var multiplier = 1
-var clicks = -1
-var autoclicker = 0
-var price11 = 100000
-var restartPrice = 1000000
+let totalMultiplier = 1
+let multiplier = 1
+let clicks = -1
+let autoclicker = 0
+let price11 = 100000
+let restartPrice = 1000000
 
-var price1 = 10
-var multiplier1 = 1
-var price2 = 500
-var multiplier2 = 10
+let price1 = 10
+let multiplier1 = 1
+let price2 = 500
+let multiplier2 = 10
 
-var price3 = 10000
-var multiplier3 = 50
-var price4 = 50000
-var multiplier4 = 100
+let price3 = 10000
+let multiplier3 = 50
+let price4 = 50000
+let multiplier4 = 100
 
-var price5 = 250000
-var multiplier5 = 500
-var price6 = 1000000
-var multiplier6 = 1000
+let price5 = 250000
+let multiplier5 = 500
+let price6 = 1000000
+let multiplier6 = 1000
 
-var price7 = 5000000
-var multiplier7 = 5000
-var price8 = 20000000
-var multiplier8 = 10000
+let price7 = 5000000
+let multiplier7 = 5000
+let price8 = 20000000
+let multiplier8 = 10000
 
-var price9 = 100000000
-var multiplier9 = 50000
-var price10 = 500000000
-var multiplier10 = 100000
+let price9 = 100000000
+let multiplier9 = 50000
+let price10 = 500000000
+let multiplier10 = 100000
 
 document.getElementById("Button").onclick = click
 document.getElementById("Autoclicker").onclick = purchase11
