@@ -68,6 +68,10 @@ const autoclicker1 = (autoclicker) => {
         clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
         clicks = clicks + (multiplier * totalMultiplier)
         localStorage.setItem('savedClicks', clicks) 
+
+        document.getElementById("totalPoints").textContent = "Total Points: " + Intl.NumberFormat("en-US").format(totalPoints + (multiplier * totalMultiplier))
+        totalPoints = totalPoints + (multiplier * totalMultiplier)
+        localStorage.setItem('savedTotalPoints', totalPoints) 
         if(autoclicker >= 1){
             autoclicker1(autoclicker)
         }
