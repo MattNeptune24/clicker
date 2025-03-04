@@ -3,7 +3,7 @@ const totalDisplay = document.getElementById("Total")
 
 let totalClicks = 0
 let totalPoints = 0
-let totalTime = 0
+let totalTime = 1
 
 let totalMultiplier = 1
 let multiplier = 1
