@@ -53,8 +53,13 @@ label{
     background-image: radial-gradient(rgb(85,70,70), rgb(50,50,50));
 }
 
-.LoadData {
+.loadData {
     height: 25px;
     width: 125px;
     font-size: x-small;
+}
+
+.stats {
+    font-size: 10px;
+    color: rgb(125,125,125);
 }
