@@ -71,8 +71,6 @@ const autoclicker1 = (autoclicker) => {
     }, autoclicker * 1000);
 }
 
-autoclicker1(autoclicker)
-
 function loadData(){
     clicks = Number(localStorage.getItem('savedClicks'))
     multiplier = 1
