@@ -3,6 +3,7 @@ const totalDisplay = document.getElementById("Total")
 
 let totalClicks = 0
 let totalPoints = 0
+let totalTime = 0
 
 let totalMultiplier = 1
 let multiplier = 1
@@ -78,17 +79,32 @@ const autoclicker1 = (autoclicker) => {
     }, autoclicker * 1000);
 }
 
+const timer = (time) => {
+    setTimeout(() => {
+        document.getElementById("totalTime").textContent = "Total Time : " + Intl.NumberFormat("en-US").format(totalTime + 1)
+        totalTime = totalTime + 1
+        localStorage.setItem('savedTotalTime', totalTime)
+        console.log(totalTime)
+        timer(totalTime)
+    }, 60000);
+}
+
+timer(totalTime)
+
 function click(){
     clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
     clicks = clicks + (multiplier * totalMultiplier)
     localStorage.setItem('savedClicks', clicks) 
 
-    document.getElementById("totalPoints").textContent = "Total Points: " + Intl.NumberFormat("en-US").format(totalPoints + (multiplier * totalMultiplier))
+    document.getElementById("totalPoints").textContent = "Total Points : " + Intl.NumberFormat("en-US").format(totalPoints + (multiplier * totalMultiplier))
     totalPoints = totalPoints + (multiplier * totalMultiplier)
     localStorage.setItem('savedTotalPoints', totalPoints) 
-    document.getElementById("totalClicks").textContent = "Total Clicks: " + Intl.NumberFormat("en-US").format(totalClicks + 1)
+    document.getElementById("totalClicks").textContent = "Total Clicks : " + Intl.NumberFormat("en-US").format(totalClicks + 1)
     totalClicks = totalClicks + 1
     localStorage.setItem('savedTotalClicks', totalClicks) 
+    document.getElementById("totalTime").textContent = "Total Time : " + Intl.NumberFormat("en-US").format(totalTime)
+    totalTime = totalTime
+    localStorage.setItem('savedTotalTime', totalTime) 
 }
 
 function loadData(){
@@ -101,9 +117,11 @@ function loadData(){
     document.getElementById("Text").textContent = "Successfully loaded " + new Intl.NumberFormat("en-US").format(clicks) + " points."
 
     totalPoints = Number(localStorage.getItem('savedTotalPoints'))
-    document.getElementById("totalPoints").textContent = "Total Points: " + new Intl.NumberFormat("en-US").format(totalPoints)
+    document.getElementById("totalPoints").textContent = "Total Points : " + new Intl.NumberFormat("en-US").format(totalPoints)
     totalClicks = Number(localStorage.getItem('savedTotalClicks'))
-    document.getElementById("totalClicks").textContent = "Total Clicks: " + new Intl.NumberFormat("en-US").format(totalClicks)
+    document.getElementById("totalClicks").textContent = "Total Clicks : " + new Intl.NumberFormat("en-US").format(totalClicks)
+    totalTime = Number(localStorage.getItem('savedTotalTime'))
+    document.getElementById("totalTime").textContent = "Total Time : " + Intl.NumberFormat("en-US").format(totalTime)
 }
 
 function hardmode(){
