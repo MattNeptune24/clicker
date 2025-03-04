@@ -3,7 +3,7 @@ const totalDisplay = document.getElementById("Total")
 
 let totalMultiplier = 1
 let multiplier = 1
-let clicks = -1
+let clicks = 0
 let autoclicker = 0
 let price11 = 100000
 let restartPrice = 1000000
