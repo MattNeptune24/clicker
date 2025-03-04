@@ -79,6 +79,7 @@ function loadData(){
     totalMultiplier = 1
     document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
     clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks)
+    document.getElementById("Text").textContent = "Successfully loaded " + new Intl.NumberFormat("en-US").format(clicks) + " points."
 }
 
 function hardmode(){
