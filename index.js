@@ -31,11 +31,12 @@ let multiplier8 = 10000
 let price9 = 100000000
 let multiplier9 = 50000
 let price10 = 500000000
-let multiplier10 = 100000
+let multiplier10 = 100000 
 
 document.getElementById("Button").onclick = click
 document.getElementById("Autoclicker").onclick = purchase11
 document.getElementById("RestartButton").onclick = restart
+document.getElementById("LoadData").onclick = loadData
 
 document.getElementById("Shop1").onclick = purchase1
 document.getElementById("Shop2").onclick = purchase2
@@ -61,15 +62,24 @@ document.getElementById("Shop10").textContent = "+" + new Intl.NumberFormat("en-
 
 const autoclicker1 = (autoclicker) => {
     setTimeout(() => {
-    clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
-    clicks = clicks + (multiplier * totalMultiplier)
-    if(autoclicker >= 1){
-        autoclicker1(autoclicker)
-    }
+        clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
+        clicks = clicks + (multiplier * totalMultiplier)
+        if(autoclicker >= 1){
+            autoclicker1(autoclicker)
+        }
     }, autoclicker * 1000);
 }
 
 autoclicker1(autoclicker)
+
+function loadData(){
+    clicks = Number(localStorage.getItem('savedClicks'))
+    multiplier = 1
+    document.getElementById("Text2").textContent = new Intl.NumberFormat("en-US").format(multiplier) + " Point / Click"
+    totalMultiplier = 1
+    document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
+    clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks)
+}
 
 function hardmode(){
     if(clicks <= 0){
@@ -119,7 +129,7 @@ function restart(){
     if(clicks >= restartPrice){
         multiplier = 1
         clicks = -1, autoclicker = 0
-        price11 = 100000, totalMultiplier = totalMultiplier + 0.5
+        price11 = 100000, totalMultiplier = totalMultiplier + 1
 
         price1 = 100, multiplier1 = 1
         price2 = 500, multiplier2 = 10
@@ -155,6 +165,7 @@ function restart(){
 function click(){
     clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
     clicks = clicks + (multiplier * totalMultiplier)
+    localStorage.setItem('savedClicks', clicks) 
 }
 
 function purchase1(){
