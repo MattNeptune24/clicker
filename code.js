@@ -70,7 +70,7 @@ const autoclicker1 = (autoclicker) => {
         clicks = clicks + (multiplier * totalMultiplier)
         localStorage.setItem('savedClicks', clicks) 
 
-        document.getElementById("totalPoints").textContent = "Total Points: " + Intl.NumberFormat("en-US").format(totalPoints + (multiplier * totalMultiplier))
+        document.getElementById("totalPoints").textContent = "Total Points : " + Intl.NumberFormat("en-US").format(totalPoints + (multiplier * totalMultiplier))
         totalPoints = totalPoints + (multiplier * totalMultiplier)
         localStorage.setItem('savedTotalPoints', totalPoints) 
         if(autoclicker >= 1){
