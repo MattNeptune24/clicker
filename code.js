@@ -64,6 +64,7 @@ const autoclicker1 = (autoclicker) => {
     setTimeout(() => {
         clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
         clicks = clicks + (multiplier * totalMultiplier)
+        localStorage.setItem('savedClicks', clicks) 
         if(autoclicker >= 1){
             autoclicker1(autoclicker)
         }
