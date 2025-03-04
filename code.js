@@ -1,6 +1,9 @@
 const clicksDisplay = document.getElementById("Clicks")
 const totalDisplay = document.getElementById("Total")
 
+let totalClicks = 0
+let totalPoints = 0
+
 let totalMultiplier = 1
 let multiplier = 1
 let clicks = 0
@@ -71,14 +74,32 @@ const autoclicker1 = (autoclicker) => {
     }, autoclicker * 1000);
 }
 
+function click(){
+    clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
+    clicks = clicks + (multiplier * totalMultiplier)
+    localStorage.setItem('savedClicks', clicks) 
+
+    document.getElementById("totalPoints").textContent = "Total Points: " + Intl.NumberFormat("en-US").format(totalPoints + (multiplier * totalMultiplier))
+    totalPoints = totalPoints + (multiplier * totalMultiplier)
+    localStorage.setItem('savedTotalPoints', totalPoints) 
+    document.getElementById("totalClicks").textContent = "Total Clicks: " + Intl.NumberFormat("en-US").format(totalClicks + 1)
+    totalClicks = totalClicks + 1
+    localStorage.setItem('savedTotalClicks', totalClicks) 
+}
+
 function loadData(){
     clicks = Number(localStorage.getItem('savedClicks'))
+    clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks)
     multiplier = 1
     document.getElementById("Text2").textContent = new Intl.NumberFormat("en-US").format(multiplier) + " Point / Click"
     totalMultiplier = 1
     document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
-    clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks)
     document.getElementById("Text").textContent = "Successfully loaded " + new Intl.NumberFormat("en-US").format(clicks) + " points."
+
+    totalPoints = Number(localStorage.getItem('savedTotalPoints'))
+    document.getElementById("totalPoints").textContent = "Total Points: " + new Intl.NumberFormat("en-US").format(totalPoints)
+    totalClicks = Number(localStorage.getItem('savedTotalClicks'))
+    document.getElementById("totalClicks").textContent = "Total Clicks: " + new Intl.NumberFormat("en-US").format(totalClicks)
 }
 
 function hardmode(){
@@ -160,12 +181,6 @@ function restart(){
     }else{
         document.getElementById("Text").textContent = "You must have " + new Intl.NumberFormat("en-US").format(restartPrice) + " points to restart your progress."
     }
-}
-
-function click(){
-    clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
-    clicks = clicks + (multiplier * totalMultiplier)
-    localStorage.setItem('savedClicks', clicks) 
 }
 
 function purchase1(){
