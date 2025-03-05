@@ -139,50 +139,6 @@ function loadData(){
     restartPrice = Number(localStorage.getItem('savedRestartPrice'))
 }
 
-function hardmode(){
-    if(clicks <= 0){
-        multiplier = 1, totalMultiplier = 1
-        clicks = -1, autoclicker = 0
-        price11 = 1000000
-    
-        price1 = 100, multiplier1 = 1
-        price2 = 5000, multiplier2 = 10
-    
-        price3 = 100000, multiplier3 = 50
-        price4 = 500000, multiplier4 = 100
-    
-        price5 = 2500000, multiplier5 = 500
-        price6 = 10000000, multiplier6 = 1000
-    
-        price7 = 50000000, multiplier7 = 5000
-        price8 = 200000000, multiplier8 = 10000
-    
-        price9 = 1000000000, multiplier9 = 50000
-        price10 = 5000000000, multiplier10 = 100000
-            
-        document.getElementById("Shop1").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier1), document.getElementById("Shop2").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier2)
-        document.getElementById("Shop3").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier3), document.getElementById("Shop4").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier4)
-        document.getElementById("Shop5").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier5), document.getElementById("Shop6").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier6)
-        document.getElementById("Shop7").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier7), document.getElementById("Shop8").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier8)
-        document.getElementById("Shop9").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier9), document.getElementById("Shop10").textContent = "+" + new Intl.NumberFormat("en-US").format(multiplier10)
-    
-        clicksDisplay.textContent = new Intl.NumberFormat("en-US").format(clicks+multiplier)
-        document.getElementById("Text2").textContent = new Intl.NumberFormat("en-US").format(multiplier) + " Point / Click"
-        document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
-        restartPrice = 10000000
-        document.body.className = "hardmode"
-        document.getElementById("Shop1").className = "hardmode",document.getElementById("Shop2").className = "hardmode",
-        document.getElementById("Shop3").className = "hardmode",document.getElementById("Shop4").className = "hardmode", 
-        document.getElementById("Shop5").className = "hardmode",document.getElementById("Shop6").className = "hardmode", 
-        document.getElementById("Shop7").className = "hardmode",document.getElementById("Shop8").className = "hardmode", 
-        document.getElementById("Shop9").className = "hardmode",document.getElementById("Shop10").className = "hardmode", 
-        document.getElementById("Button").className = "hardmode",document.getElementById("Autoclicker").className = "hardmode", 
-
-        console.log("Hardmode Activated")
-    }
-}
-
-
 function restart(){
     if(clicks >= restartPrice){
         multiplier = 1
