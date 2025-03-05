@@ -49,10 +49,6 @@ label{
     width: 10px;
 }
 
-.hardmode {
-    background-image: radial-gradient(rgb(85,70,70), rgb(50,50,50));
-}
-
 .loadData {
     height: 25px;
     width: 125px;
