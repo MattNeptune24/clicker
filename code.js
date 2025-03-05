@@ -1,7 +1,7 @@
 const clicksDisplay = document.getElementById("Clicks")
 const totalDisplay = document.getElementById("Total")
 
-let totalClicks = 0
+let totalClicks = 1
 let totalPoints = 0
 let totalTime = 0
 let totalMultiplier = 1
