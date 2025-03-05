@@ -134,8 +134,14 @@ function loadData(){
     document.getElementById("totalClicks").textContent = "Total Clicks : " + new Intl.NumberFormat("en-US").format(totalClicks)
     totalTime = Number(localStorage.getItem('savedTotalTime'))
     document.getElementById("totalTime").textContent = "Total Time : " + Intl.NumberFormat("en-US").format(totalTime)
-    totalMultiplier = Number(localStorage.getItem('savedTotalMultiplier'))
-    document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
+    if(Number(localStorage.getItem('savedTotalMultiplier')) <= 0){
+        localStorage.setItem(('savedTotalMultiplier'),1)
+        document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
+    }else{
+        totalMultiplier = Number(localStorage.getItem('savedTotalMultiplier'))
+        document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
+    }
+
     restartPrice = Number(localStorage.getItem('savedRestartPrice'))
 }
 
