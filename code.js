@@ -4,8 +4,8 @@ const totalDisplay = document.getElementById("Total")
 let totalClicks = 0
 let totalPoints = 0
 let totalTime = 0
-
 let totalMultiplier = 1
+
 let multiplier = 1
 let clicks = 0
 let autoclicker = 0
@@ -70,9 +70,17 @@ const autoclicker1 = (autoclicker) => {
         clicks = clicks + (multiplier * totalMultiplier)
         localStorage.setItem('savedClicks', clicks) 
 
-        document.getElementById("totalPoints").textContent = "Total Points : " + Intl.NumberFormat("en-US").format(totalPoints + (multiplier * totalMultiplier))
+        document.getElementById("totalPoints").textContent = "Total Points: " + Intl.NumberFormat("en-US").format(totalPoints + (multiplier * totalMultiplier))
         totalPoints = totalPoints + (multiplier * totalMultiplier)
         localStorage.setItem('savedTotalPoints', totalPoints) 
+        document.getElementById("totalTime").textContent = "Total Time : " + Intl.NumberFormat("en-US").format(totalTime)
+        totalTime = totalTime
+        localStorage.setItem('savedTotalTime', totalTime) 
+        document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
+        totalMultiplier = totalMultiplier
+        localStorage.setItem('savedTotalMultiplier', totalMultiplier)
+        restartPrice = restartPrice
+        localStorage.setItem('savedRestartPrice', restartPrice)
         if(autoclicker >= 1){
             autoclicker1(autoclicker)
         }
@@ -84,7 +92,6 @@ const timer = (time) => {
         document.getElementById("totalTime").textContent = "Total Time : " + Intl.NumberFormat("en-US").format(totalTime + 1)
         totalTime = totalTime + 1
         localStorage.setItem('savedTotalTime', totalTime)
-        console.log(totalTime)
         timer(totalTime)
     }, 60000);
 }
@@ -105,6 +112,11 @@ function click(){
     document.getElementById("totalTime").textContent = "Total Time : " + Intl.NumberFormat("en-US").format(totalTime)
     totalTime = totalTime
     localStorage.setItem('savedTotalTime', totalTime) 
+    document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
+    totalMultiplier = totalMultiplier
+    localStorage.setItem('savedTotalMultiplier', totalMultiplier)
+    restartPrice = restartPrice
+    localStorage.setItem('savedRestartPrice', restartPrice)
 }
 
 function loadData(){
@@ -122,6 +134,9 @@ function loadData(){
     document.getElementById("totalClicks").textContent = "Total Clicks : " + new Intl.NumberFormat("en-US").format(totalClicks)
     totalTime = Number(localStorage.getItem('savedTotalTime'))
     document.getElementById("totalTime").textContent = "Total Time : " + Intl.NumberFormat("en-US").format(totalTime)
+    totalMultiplier = Number(localStorage.getItem('savedTotalMultiplier'))
+    document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
+    restartPrice = Number(localStorage.getItem('savedRestartPrice'))
 }
 
 function hardmode(){
@@ -173,7 +188,8 @@ function restart(){
         multiplier = 1
         clicks = -1, autoclicker = 0
         price11 = 100000, totalMultiplier = totalMultiplier + 1
-
+        localStorage.setItem('savedTotalMultiplier', totalMultiplier)
+        
         price1 = 100, multiplier1 = 1
         price2 = 500, multiplier2 = 10
 
@@ -200,6 +216,7 @@ function restart(){
         document.getElementById("Text2").textContent = new Intl.NumberFormat("en-US").format(multiplier) + " Point / Click"
         document.getElementById("Text4").textContent = new Intl.NumberFormat("en-US").format(totalMultiplier) + "x Total Multiplier"
         restartPrice = restartPrice * 10
+        localStorage.setItem('savedRestartPrice', restartPrice)
     }else{
         document.getElementById("Text").textContent = "You must have " + new Intl.NumberFormat("en-US").format(restartPrice) + " points to restart your progress."
     }
